@@ -26,10 +26,7 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io.connect(
-      "https://react-buzz-chat.herokuapp.com/",
-      connectionOptions
-    );
+    socket = io.connect(ENDPOINT, connectionOptions);
 
     setRoom(room);
     setName(name);
