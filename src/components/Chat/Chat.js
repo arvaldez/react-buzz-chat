@@ -25,7 +25,7 @@ const Chat = ({ location }) => {
   const ENDPOINT = "https://react-buzz-chat.herokuapp.com/";
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
-
+    //"localhost:5000"
     socket = io.connect(ENDPOINT, connectionOptions);
 
     setRoom(room);
@@ -57,7 +57,7 @@ const Chat = ({ location }) => {
   };
 
   const sendBuzz = () => {
-    socket.emit("sound", "buzz");
+    socket.emit("sound");
     socket.emit("sendMessage", "buzz", () => setMessage(""));
   };
 
