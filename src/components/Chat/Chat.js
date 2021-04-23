@@ -23,7 +23,7 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const ENDPOINT = "https://react-buzz-chat.herokuapp.com/";
-  const LOCAL = "localhost:5000";
+  // const LOCAL = "localhost:5000";
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     //"localhost:5000"
