@@ -58,8 +58,37 @@ const Chat = ({ location }) => {
 
   const sendBuzz = () => {
     socket.emit("sound");
+    // socket.on("sound", info);
     socket.emit("sendMessage", "buzz", () => setMessage(""));
   };
+
+  // var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  // const sendBuzz = () => {
+  //   console.log("send buzz");
+  //   socket.emit("sendMessage", "buzz", () => setMessage(""));
+  //   socket.on("sound", (sound) => {
+  //     console.log("sound");
+  //     var source = audioCtx.createBufferSource();
+  //     audioCtx.decodeAudioData(sound, function (buf) {
+  //       source.buffer = buf;
+  //       source.connect(audioCtx.destination);
+  //       source.start();
+  //     });
+  //   }
+  // };
+
+  // socket.on("sound", function (info) {
+  //   if (info.sound) {
+  //     var img = new Audio();
+  //     img.src = "data:audio/mp3;base64," + info.buffer;
+  //     ctx.drawImage(img, 0, 0);
+  //   }
+  // });
+
+  //   //   socket.emit("sound");
+
+  // });
 
   console.log(message, messages);
 
